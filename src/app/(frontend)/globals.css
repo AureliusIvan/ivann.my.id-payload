@@ -90,14 +90,37 @@
   }
   body {
     @apply bg-background text-foreground min-h-[100vh] flex flex-col;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 }
 
+/* Smooth scrolling for better UX */
 html {
+  scroll-behavior: smooth;
   opacity: 0;
 }
 
+/* Add subtle animations for theme transitions */
 html[data-theme='dark'],
 html[data-theme='light'] {
   opacity: initial;
+  transition: opacity 0.3s ease;
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--ring));
 }
