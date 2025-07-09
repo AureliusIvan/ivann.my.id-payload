@@ -4,9 +4,15 @@
   border: none;
   padding: 0;
   text-decoration: underline;
+  transition: all 0.2s ease;
 
   &:hover {
     cursor: pointer;
     opacity: 0.85;
+    transform: scale(1.05);
+  }
+
+  &:active {
+    transform: scale(0.95);
   }
 }
